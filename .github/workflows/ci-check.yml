@@ -105,27 +105,38 @@ jobs:
                   with open(dest_path, "w", encoding="utf-8") as f:
                       f.write(str(content))
 
-          # 3. Execute ordered commands in work_dir
+          # 3. Execute ordered commands in work_dir with process-group isolation & file-backed stdio
+          import signal
           for idx, cmd in enumerate(commands):
               if not overall_ok:
                   break
               t0 = time.time()
+              out_path = os.path.join(base_dir, f"_stdout_{idx}.log")
+              err_path = os.path.join(base_dir, f"_stderr_{idx}.log")
+              proc = None
               try:
-                  proc = subprocess.run(
-                      ["bash", "-c", str(cmd)],
-                      cwd=work_dir,
-                      capture_output=True,
-                      text=True,
-                      timeout=cmd_timeout,
-                  )
-                  exit_code = proc.returncode
-                  stdout_str = proc.stdout or ""
-                  stderr_str = proc.stderr or ""
-              except subprocess.TimeoutExpired as te:
+                  with open(out_path, "wb") as out_f, open(err_path, "wb") as err_f:
+                      proc = subprocess.Popen(
+                          ["bash", "-e", "-o", "pipefail", "-c", str(cmd)],
+                          cwd=work_dir,
+                          stdout=out_f,
+                          stderr=err_f,
+                          start_new_session=True,
+                      )
+                      exit_code = proc.wait(timeout=cmd_timeout)
+              except subprocess.TimeoutExpired:
                   exit_code = 124
-                  stdout_str = (te.stdout.decode("utf-8", errors="replace") if isinstance(te.stdout, bytes) else (te.stdout or ""))
-                  stderr_str = (te.stderr.decode("utf-8", errors="replace") if isinstance(te.stderr, bytes) else (te.stderr or "")) + f"\nCommand timed out after {cmd_timeout}s"
+              finally:
+                  if proc is not None:
+                      try:
+                          os.killpg(proc.pid, signal.SIGTERM)
+                      except Exception:
+                          pass
               dur = int((time.time() - t0) * 1000)
+              stdout_str = open(out_path, "r", encoding="utf-8", errors="replace").read() if os.path.exists(out_path) else ""
+              stderr_str = open(err_path, "r", encoding="utf-8", errors="replace").read() if os.path.exists(err_path) else ""
+              if exit_code == 124:
+                  stderr_str += f"\nCommand timed out after {cmd_timeout}s"
               results.append({
                   "index": idx,
                   "command": str(cmd),
