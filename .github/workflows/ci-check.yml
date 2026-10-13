@@ -1,0 +1,182 @@
+name: CI Check
+run-name: check-${{ inputs.cid }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      cid:
+        description: 'Check correlation ID'
+        required: true
+        type: string
+      repo_url:
+        description: 'Target repository URL'
+        required: false
+        default: ''
+        type: string
+      repo_ref:
+        description: 'Target git ref'
+        required: false
+        default: ''
+        type: string
+      stack:
+        description: 'Runtime stack'
+        required: false
+        default: 'node'
+        type: string
+      payload_b64:
+        description: 'Encoded task spec'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  build-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Prepare environment
+        env:
+          INPUT_CID: ${{ inputs.cid }}
+          INPUT_REPO_URL: ${{ inputs.repo_url }}
+          INPUT_REPO_REF: ${{ inputs.repo_ref }}
+          INPUT_STACK: ${{ inputs.stack }}
+          INPUT_PAYLOAD_B64: ${{ inputs.payload_b64 }}
+        run: |
+          python3 - << 'PYEOF'
+          import base64, glob, json, os, shutil, subprocess, sys, time
+
+          cid = os.environ.get("INPUT_CID", "unknown")
+          repo_url = os.environ.get("INPUT_REPO_URL", "").strip()
+          repo_ref = os.environ.get("INPUT_REPO_REF", "").strip()
+          payload_b64 = os.environ.get("INPUT_PAYLOAD_B64", "").strip()
+
+          base_dir = "/tmp/ci_work"
+          work_dir = os.path.join(base_dir, "workspace")
+          out_dir = os.path.join(base_dir, "out")
+          files_out_dir = os.path.join(out_dir, "files")
+          os.makedirs(work_dir, exist_ok=True)
+          os.makedirs(files_out_dir, exist_ok=True)
+
+          spec = json.loads(base64.b64decode(payload_b64).decode("utf-8"))
+          commands = spec.get("commands") or []
+          injected_files = spec.get("files") or {}
+          artifact_globs = spec.get("artifactGlobs") or []
+          cmd_timeout = int(spec.get("commandTimeoutSec") or 240)
+
+          results = []
+          combined_logs = []
+          overall_ok = True
+
+          # 1. Optional target repository clone
+          if repo_url:
+              t0 = time.time()
+              clone_cmd = ["git", "clone", "--depth", "1"]
+              if repo_ref:
+                  clone_cmd.extend(["--branch", repo_ref])
+              clone_cmd.extend([repo_url, work_dir])
+              shutil.rmtree(work_dir, ignore_errors=True)
+              os.makedirs(os.path.dirname(work_dir), exist_ok=True)
+              proc = subprocess.run(clone_cmd, capture_output=True, text=True, timeout=120)
+              dur = int((time.time() - t0) * 1000)
+              results.append({
+                  "index": -1,
+                  "command": f"git clone {repo_url}" + (f" ({repo_ref})" if repo_ref else ""),
+                  "exitCode": proc.returncode,
+                  "durationMs": dur,
+                  "stdout": proc.stdout[-12000:],
+                  "stderr": proc.stderr[-12000:],
+              })
+              combined_logs.append(f"=== [CLONE] git clone {repo_url} (exit={proc.returncode}, {dur}ms) ===\n{proc.stdout}\n{proc.stderr}")
+              if proc.returncode != 0:
+                  overall_ok = False
+                  os.makedirs(work_dir, exist_ok=True)
+
+          # 2. Inject virtual files / patches safely inside work_dir
+          if overall_ok and isinstance(injected_files, dict):
+              real_work = os.path.realpath(work_dir)
+              for rel_path, content in injected_files.items():
+                  safe_rel = os.path.normpath(str(rel_path)).lstrip("/\\")
+                  dest_path = os.path.realpath(os.path.join(real_work, safe_rel))
+                  if not dest_path.startswith(real_work):
+                      continue
+                  os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                  with open(dest_path, "w", encoding="utf-8") as f:
+                      f.write(str(content))
+
+          # 3. Execute ordered commands in work_dir
+          for idx, cmd in enumerate(commands):
+              if not overall_ok:
+                  break
+              t0 = time.time()
+              try:
+                  proc = subprocess.run(
+                      ["bash", "-c", str(cmd)],
+                      cwd=work_dir,
+                      capture_output=True,
+                      text=True,
+                      timeout=cmd_timeout,
+                  )
+                  exit_code = proc.returncode
+                  stdout_str = proc.stdout or ""
+                  stderr_str = proc.stderr or ""
+              except subprocess.TimeoutExpired as te:
+                  exit_code = 124
+                  stdout_str = (te.stdout.decode("utf-8", errors="replace") if isinstance(te.stdout, bytes) else (te.stdout or ""))
+                  stderr_str = (te.stderr.decode("utf-8", errors="replace") if isinstance(te.stderr, bytes) else (te.stderr or "")) + f"\nCommand timed out after {cmd_timeout}s"
+              dur = int((time.time() - t0) * 1000)
+              results.append({
+                  "index": idx,
+                  "command": str(cmd),
+                  "exitCode": exit_code,
+                  "durationMs": dur,
+                  "stdout": stdout_str[-20000:],
+                  "stderr": stderr_str[-20000:],
+              })
+              combined_logs.append(f"=== [STEP {idx + 1}] {cmd} (exit={exit_code}, {dur}ms) ===\n{stdout_str}\n{stderr_str}")
+              if exit_code != 0:
+                  overall_ok = False
+
+          # 4. Collect requested artifact files
+          collected_files = []
+          real_work = os.path.realpath(work_dir)
+          for pattern in artifact_globs:
+              pat_str = str(pattern).lstrip("/\\")
+              matches = glob.glob(os.path.join(real_work, pat_str), recursive=True)
+              for m in matches:
+                  real_m = os.path.realpath(m)
+                  if os.path.isfile(real_m) and real_m.startswith(real_work):
+                      rel = os.path.relpath(real_m, real_work).replace("\\", "/")
+                      dest = os.path.join(files_out_dir, rel)
+                      os.makedirs(os.path.dirname(dest), exist_ok=True)
+                      shutil.copy2(real_m, dest)
+                      if rel not in collected_files:
+                          collected_files.append(rel)
+
+          # 5. Write _result.json and _combined.log
+          summary_obj = {
+              "cid": cid,
+              "ok": overall_ok,
+              "targetRepoUrl": repo_url or None,
+              "commandResults": results,
+              "collectedFiles": collected_files,
+          }
+          with open(os.path.join(out_dir, "_result.json"), "w", encoding="utf-8") as f:
+              json.dump(summary_obj, f, indent=2)
+          with open(os.path.join(out_dir, "_combined.log"), "w", encoding="utf-8") as f:
+              f.write("\n\n".join(combined_logs))
+
+          print(f"Check {cid} finished: ok={overall_ok}, steps={len(results)}, artifacts={len(collected_files)}")
+          if not overall_ok:
+              sys.exit(1)
+          PYEOF
+
+      - name: Upload check output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: out-${{ inputs.cid }}
+          path: /tmp/ci_work/out/
+          include-hidden-files: true
+          retention-days: 1
