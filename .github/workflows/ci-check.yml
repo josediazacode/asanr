@@ -23,6 +23,11 @@ on:
         required: false
         default: 'node'
         type: string
+      cache_profile:
+        description: 'Cache profile (playwright-crawlee, reverse-engineering, python-ml, full, none)'
+        required: false
+        default: 'playwright-crawlee'
+        type: string
       payload_b64:
         description: 'Encoded task spec'
         required: true
@@ -36,6 +41,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      - name: Restore toolchain & browser cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/ms-playwright
+            ~/.npm
+            ~/.cache/pip
+          key: cache-${{ inputs.stack }}-${{ github.run_id }}
+          restore-keys: |
+            cache-${{ inputs.stack }}-
+            cache-
+
       - name: Prepare environment
         env:
           INPUT_CID: ${{ inputs.cid }}
