@@ -1,11 +1,9 @@
 {
   "workerId": "worker_1793363249",
-  "status": "busy",
+  "status": "awaiting_choice",
   "activeTaskId": "task_1793366249921",
-  "heartbeat": "2026-10-30T13:17:32.832338+00:00",
+  "heartbeat": "2026-10-30T13:17:55.431068+00:00",
   "details": {
-    "persona": "Marisa Peer",
-    "url": "https://mega.nz/folder/21pRRQKY#WQTXgcOpJoXOc0Z3k32KEg/folder/ftwUECTb",
-    "step": "downloading"
+    "error": "no_media"
   }
 }
