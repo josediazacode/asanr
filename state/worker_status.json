@@ -1,11 +1,12 @@
 {
-  "workerId": "worker_1793365770",
-  "status": "busy",
-  "activeTaskId": "task_1793365798635",
-  "heartbeat": "2026-10-30T13:10:02.427433+00:00",
+  "workerId": "worker_1793363249",
+  "status": "awaiting_choice",
+  "activeTaskId": "task_1793363300339",
+  "heartbeat": "2026-10-30T13:10:59.832221+00:00",
   "details": {
-    "persona": "Marisa Peer",
-    "url": "https://mega.nz/folder/21pRRQKY#WQTXgcOpJoXOc0Z3k32KEg/folder/ftwUECTb",
-    "step": "downloading"
+    "totalFiles": 14,
+    "totalChunks": 143,
+    "durationSec": 2550.4,
+    "branch": "deliverables/task_1793363300339"
   }
 }
