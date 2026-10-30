@@ -1,26 +1,12 @@
 {
   "workerId": "worker_1793367187",
-  "status": "busy",
+  "status": "awaiting_choice",
   "activeTaskId": "task_1793367202412",
-  "heartbeat": "2026-10-30T14:47:31.105989+00:00",
+  "heartbeat": "2026-10-30T15:00:47.177097+00:00",
   "details": {
-    "step": "transcribing",
     "totalFiles": 14,
-    "files": [
-      "06-Chapter_6_-_I_Am_Enough_-_Marisa_Peer.mp3",
-      "05-Marisa Answers Your Questions Additional Learning video6.mp4",
-      "05-Marisa Answers Your Questions Additional Learning video10.mp4",
-      "04-Week_5_Hypnosis_Audio.mp3",
-      "05-Marisa Answers Your Questions Additional Learning video2.mp4",
-      "05-Marisa Answers Your Questions Additional Learning video4.mp4",
-      "05-Marisa Answers Your Questions Additional Learning video9.mp4",
-      "03-Coaching Call Additional Learning.mp4",
-      "04-Week_5_Transformation_Audio_-_Living_a_Healthy_Life_Healing_Vortex.mp3",
-      "01-How to Live a Healthy Life and Manage Pain Core Video and Viewing Guide.mp4",
-      "05-Marisa Answers Your Questions Additional Learning video3.mp4",
-      "06-Chatper_7_-_I_Am_Enough_-_Marisa_Peer.mp3",
-      "05-Marisa Answers Your Questions Additional Learning video11.mp4",
-      "05-Marisa Answers Your Questions Additional Learning video7.mp4"
-    ]
+    "totalChunks": 143,
+    "durationSec": 5240.0,
+    "branch": "deliverables/task_1793367202412"
   }
 }
