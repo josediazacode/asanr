@@ -1,12 +1,7 @@
 {
-  "taskId": "task_1793383881074",
-  "status": "completed",
-  "ok": true,
-  "persona": "Marisa Peer",
-  "totalFiles": 12,
-  "totalWords": 39145,
-  "totalChunks": 118,
-  "durationSec": 1771.9,
-  "completedAt": "2026-10-30T18:41:00.517418+00:00",
-  "branch": "deliverables/task_1793383881074"
+  "taskId": "task_1793389921615",
+  "status": "failed",
+  "ok": false,
+  "error": "No media files could be downloaded from URL",
+  "completedAt": "2026-10-30T19:52:20.100909+00:00"
 }
