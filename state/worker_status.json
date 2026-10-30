@@ -1,4 +1,9 @@
 {
+  "workerId": "worker_1793400485",
   "status": "warming_up",
-  "startedAt": "2026-10-30T22:47:17.068Z"
+  "activeTaskId": null,
+  "heartbeat": "2026-10-30T22:48:05.400180+00:00",
+  "details": {
+    "step": "loading_models"
+  }
 }
