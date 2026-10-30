@@ -2,10 +2,23 @@
   "workerId": "worker_1793383854",
   "status": "busy",
   "activeTaskId": "task_1793383881074",
-  "heartbeat": "2026-10-30T18:11:27.331653+00:00",
+  "heartbeat": "2026-10-30T18:31:52.574375+00:00",
   "details": {
-    "persona": "Marisa Peer",
-    "url": "https://mega.nz/folder/21pRRQKY#WQTXgcOpJoXOc0Z3k32KEg/folder/qk4WnAKB",
-    "step": "downloading"
+    "step": "transcribing",
+    "totalFiles": 12,
+    "files": [
+      "05-Marisa Answers Your Questions Additional Learning video1.mp4",
+      "01-Attracting and Sustaining Healthy Relationships Core Video and Viewing Guide.mp4",
+      "05-Marisa Answers Your Questions Additional Learning video7.mp4",
+      "06-Chaper_8-_I_Am_Enough_-_Marisa_Peer.mp3",
+      "05-Marisa Answers Your Questions Additional Learning video2.mp4",
+      "03-Coaching Call Additional Learning.mp4",
+      "05-Marisa Answers Your Questions Additional Learning video11.mp4",
+      "02-The Rules of Relationships Core Video and Viewing Guide.mp4",
+      "05-Marisa Answers Your Questions Additional Learning video3.mp4",
+      "05-Marisa Answers Your Questions Additional Learning video8.mp4",
+      "05-Marisa Answers Your Questions Additional Learning video6.mp4",
+      "06-Chapter_9_-_I_Am_Enough_-_Marisa_Peer.mp3"
+    ]
   }
 }
