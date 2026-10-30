@@ -2,13 +2,13 @@
   "workerId": "worker_1793400485",
   "status": "busy",
   "activeTaskId": "task_1793400516013",
-  "heartbeat": "2026-10-30T23:38:55.369479+00:00",
+  "heartbeat": "2026-10-30T23:39:20.601298+00:00",
   "details": {
     "step": "transcribing",
-    "progress": "1/15",
-    "currentFile": "01-Living Your Lifes Purpose Core Video and Viewing Guide",
+    "progress": "2/15",
+    "currentFile": "02-The Rules of Living Your Lifes Purpose Core Video and Viewing Guide",
     "totalFiles": 15,
-    "chunksBuilt": 0,
-    "wordsTranscribed": 5673
+    "chunksBuilt": 17,
+    "wordsTranscribed": 8362
   }
 }
