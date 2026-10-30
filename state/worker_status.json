@@ -2,13 +2,13 @@
   "workerId": "worker_1793383854",
   "status": "busy",
   "activeTaskId": "task_1793383881074",
-  "heartbeat": "2026-10-30T18:34:36.885185+00:00",
+  "heartbeat": "2026-10-30T18:38:09.284496+00:00",
   "details": {
     "step": "transcribing",
-    "progress": "2/12",
-    "currentFile": "02-The Rules of Relationships Core Video and Viewing Guide",
+    "progress": "3/12",
+    "currentFile": "03-Coaching Call Additional Learning",
     "totalFiles": 12,
-    "chunksBuilt": 23,
-    "wordsTranscribed": 12903
+    "chunksBuilt": 38,
+    "wordsTranscribed": 30438
   }
 }
