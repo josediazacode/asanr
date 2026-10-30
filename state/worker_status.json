@@ -1,13 +1,11 @@
 {
   "workerId": "worker_1793400485",
-  "status": "ready",
-  "activeTaskId": null,
-  "heartbeat": "2026-10-30T22:48:14.276369+00:00",
+  "status": "busy",
+  "activeTaskId": "task_1793400516013",
+  "heartbeat": "2026-10-30T22:48:41.688195+00:00",
   "details": {
-    "models": [
-      "faster-whisper/tiny.en",
-      "nomic-ai/nomic-embed-text-v1.5"
-    ],
-    "warmAt": "2026-10-30T22:48:14.276355+00:00"
+    "persona": "Marisa Peer",
+    "url": "https://mega.nz/folder/21pRRQKY#WQTXgcOpJoXOc0Z3k32KEg/folder/WsgCCayC",
+    "step": "downloading"
   }
 }
