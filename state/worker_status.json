@@ -1,12 +1,14 @@
 {
   "workerId": "worker_1793363249",
-  "status": "awaiting_choice",
-  "activeTaskId": "task_1793363300339",
-  "heartbeat": "2026-10-30T13:10:59.832221+00:00",
+  "status": "ready",
+  "activeTaskId": null,
+  "heartbeat": "2026-10-30T13:11:06.184218+00:00",
   "details": {
-    "totalFiles": 14,
-    "totalChunks": 143,
-    "durationSec": 2550.4,
-    "branch": "deliverables/task_1793363300339"
+    "models": [
+      "faster-whisper/base",
+      "nomic-ai/nomic-embed-text-v1.5"
+    ],
+    "uptimeMinutes": 43,
+    "modelsLoaded": true
   }
 }
