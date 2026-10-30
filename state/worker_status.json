@@ -2,13 +2,13 @@
   "workerId": "worker_1793400485",
   "status": "busy",
   "activeTaskId": "task_1793400516013",
-  "heartbeat": "2026-10-30T23:41:47.940590+00:00",
+  "heartbeat": "2026-10-30T23:41:55.595272+00:00",
   "details": {
     "step": "transcribing",
-    "progress": "4/15",
-    "currentFile": "04-Week_7_Hypnosis_Audio",
+    "progress": "5/15",
+    "currentFile": "05-Marisa Answers Your Questions Additional Learning video",
     "totalFiles": 15,
-    "chunksBuilt": 74,
-    "wordsTranscribed": 28723
+    "chunksBuilt": 84,
+    "wordsTranscribed": 29286
   }
 }
