@@ -2,13 +2,13 @@
   "workerId": "worker_1793383854",
   "status": "busy",
   "activeTaskId": "task_1793383881074",
-  "heartbeat": "2026-10-30T18:39:37.129439+00:00",
+  "heartbeat": "2026-10-30T18:40:10.515809+00:00",
   "details": {
     "step": "transcribing",
-    "progress": "10/12",
-    "currentFile": "05-Marisa Answers Your Questions Additional Learning video8",
+    "progress": "11/12",
+    "currentFile": "06-Chaper_8-_I_Am_Enough_-_Marisa_Peer",
     "totalFiles": 12,
-    "chunksBuilt": 99,
-    "wordsTranscribed": 33444
+    "chunksBuilt": 101,
+    "wordsTranscribed": 36084
   }
 }
