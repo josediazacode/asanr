@@ -1,7 +1,3 @@
 {
-  "taskId": "task_1793366249921",
-  "status": "failed",
-  "ok": false,
-  "error": "No media files could be downloaded from URL",
-  "completedAt": "2026-10-30T13:17:54.152505+00:00"
+  "status": "idle"
 }
