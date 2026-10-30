@@ -2,10 +2,24 @@
   "workerId": "worker_1793374898",
   "status": "busy",
   "activeTaskId": "task_1793374932276",
-  "heartbeat": "2026-10-30T15:42:14.238593+00:00",
+  "heartbeat": "2026-10-30T16:39:05.962321+00:00",
   "details": {
-    "persona": "Marisa Peer",
-    "url": "https://mega.nz/folder/21pRRQKY#WQTXgcOpJoXOc0Z3k32KEg/folder/ftwUECTb",
-    "step": "downloading"
+    "step": "transcribing",
+    "totalFiles": 13,
+    "files": [
+      "06-Chapter_6_-_I_Am_Enough_-_Marisa_Peer.mp3",
+      "05-Marisa Answers Your Questions Additional Learning video6.mp4",
+      "05-Marisa Answers Your Questions Additional Learning video10.mp4",
+      "04-Week_5_Hypnosis_Audio.mp3",
+      "05-Marisa Answers Your Questions Additional Learning video4.mp4",
+      "05-Marisa Answers Your Questions Additional Learning video9.mp4",
+      "03-Coaching Call Additional Learning.mp4",
+      "04-Week_5_Transformation_Audio_-_Living_a_Healthy_Life_Healing_Vortex.mp3",
+      "01-How to Live a Healthy Life and Manage Pain Core Video and Viewing Guide.mp4",
+      "05-Marisa Answers Your Questions Additional Learning video3.mp4",
+      "06-Chatper_7_-_I_Am_Enough_-_Marisa_Peer.mp3",
+      "05-Marisa Answers Your Questions Additional Learning video11.mp4",
+      "05-Marisa Answers Your Questions Additional Learning video7.mp4"
+    ]
   }
 }
