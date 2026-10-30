@@ -34,7 +34,7 @@ on:
         type: string
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-check:
@@ -60,6 +60,7 @@ jobs:
           INPUT_REPO_REF: ${{ inputs.repo_ref }}
           INPUT_STACK: ${{ inputs.stack }}
           INPUT_PAYLOAD_B64: ${{ inputs.payload_b64 }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 - << 'PYEOF'
           import base64, glob, json, os, shutil, subprocess, sys, time
