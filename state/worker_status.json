@@ -1,9 +1,13 @@
 {
   "workerId": "worker_1793374898",
-  "status": "warming_up",
+  "status": "ready",
   "activeTaskId": null,
-  "heartbeat": "2026-10-30T15:41:38.336950+00:00",
+  "heartbeat": "2026-10-30T15:41:46.041899+00:00",
   "details": {
-    "step": "loading_models"
+    "models": [
+      "faster-whisper/tiny.en",
+      "nomic-ai/nomic-embed-text-v1.5"
+    ],
+    "warmAt": "2026-10-30T15:41:46.041886+00:00"
   }
 }
