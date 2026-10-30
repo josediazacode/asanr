@@ -1,10 +1,4 @@
 {
-  "workerId": "worker_1793374898",
-  "status": "stopped",
-  "activeTaskId": null,
-  "heartbeat": "2026-10-30T18:07:58.473Z",
-  "details": {
-    "reason": "run_completed_or_failed",
-    "resetBy": "worker-reset-status-cli"
-  }
+  "status": "warming_up",
+  "startedAt": "2026-10-30T18:10:15.120Z"
 }
