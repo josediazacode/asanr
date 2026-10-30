@@ -2,13 +2,13 @@
   "workerId": "worker_1793383854",
   "status": "busy",
   "activeTaskId": "task_1793383881074",
-  "heartbeat": "2026-10-30T18:38:55.029229+00:00",
+  "heartbeat": "2026-10-30T18:39:04.882561+00:00",
   "details": {
     "step": "transcribing",
-    "progress": "4/12",
-    "currentFile": "05-Marisa Answers Your Questions Additional Learning video1",
+    "progress": "5/12",
+    "currentFile": "05-Marisa Answers Your Questions Additional Learning video11",
     "totalFiles": 12,
-    "chunksBuilt": 89,
-    "wordsTranscribed": 30999
+    "chunksBuilt": 91,
+    "wordsTranscribed": 31665
   }
 }
