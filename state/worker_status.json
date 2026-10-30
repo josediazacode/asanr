@@ -2,26 +2,13 @@
   "workerId": "worker_1793400485",
   "status": "busy",
   "activeTaskId": "task_1793400516013",
-  "heartbeat": "2026-10-30T23:38:16.091491+00:00",
+  "heartbeat": "2026-10-30T23:38:55.369479+00:00",
   "details": {
     "step": "transcribing",
+    "progress": "1/15",
+    "currentFile": "01-Living Your Lifes Purpose Core Video and Viewing Guide",
     "totalFiles": 15,
-    "files": [
-      "05-Marisa Answers Your Questions Additional Learning video4.mp4",
-      "06-Chapter_11_-_I_Am_Enough_-_Marisa_Peer.mp3",
-      "01-Living Your Lifes Purpose Core Video and Viewing Guide.mp4",
-      "06-Chapter_10_-_I_Am_Enough_-_Marisa_Peer.mp3",
-      "05-Marisa Answers Your Questions Additional Learning video7.mp4",
-      "04-Week_7_Hypnosis_Audio.mp3",
-      "05-Marisa Answers Your Questions Additional Learning video3.mp4",
-      "05-Marisa Answers Your Questions Additional Learning video8.mp4",
-      "05-Marisa Answers Your Questions Additional Learning.mp4",
-      "03-Coaching Call Additional Learning.mp4",
-      "05-Marisa Answers Your Questions Additional Learning video6.mp4",
-      "05-Marisa Answers Your Questions Additional Learning video5.mp4",
-      "02-The Rules of Living Your Lifes Purpose Core Video and Viewing Guide.mp4",
-      "05-Marisa Answers Your Questions Additional Learning video1.mp4",
-      "05-Marisa Answers Your Questions Additional Learning video.mp4"
-    ]
+    "chunksBuilt": 0,
+    "wordsTranscribed": 5673
   }
 }
