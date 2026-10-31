@@ -2,13 +2,13 @@
   "workerId": "worker_1793405737",
   "status": "busy",
   "activeTaskId": "task_1793405763153",
-  "heartbeat": "2026-10-31T01:01:33.022701+00:00",
+  "heartbeat": "2026-10-31T01:02:47.925029+00:00",
   "details": {
     "step": "transcribing",
-    "progress": "2/24",
-    "currentFile": "02-Coaching Call Additional Learning",
+    "progress": "3/24",
+    "currentFile": "03-Week_8_Hypnosis_Audio",
     "totalFiles": 24,
-    "chunksBuilt": 20,
-    "wordsTranscribed": 22580
+    "chunksBuilt": 65,
+    "wordsTranscribed": 27498
   }
 }
