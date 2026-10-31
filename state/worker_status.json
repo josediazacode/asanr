@@ -2,13 +2,13 @@
   "workerId": "worker_1793405737",
   "status": "busy",
   "activeTaskId": "task_1793405763153",
-  "heartbeat": "2026-10-31T01:05:16.419750+00:00",
+  "heartbeat": "2026-10-31T01:06:27.923000+00:00",
   "details": {
     "step": "transcribing",
-    "progress": "9/24",
-    "currentFile": "07-003_Tell_Yourself_a_Better_Lie",
+    "progress": "10/24",
+    "currentFile": "07-004_Tell_Yourself_a_Better_Lie",
     "totalFiles": 24,
-    "chunksBuilt": 107,
-    "wordsTranscribed": 41138
+    "chunksBuilt": 123,
+    "wordsTranscribed": 48682
   }
 }
