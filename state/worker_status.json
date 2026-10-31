@@ -2,10 +2,35 @@
   "workerId": "worker_1793405737",
   "status": "busy",
   "activeTaskId": "task_1793405763153",
-  "heartbeat": "2026-10-31T00:16:05.326862+00:00",
+  "heartbeat": "2026-10-31T00:58:00.813247+00:00",
   "details": {
-    "persona": "Marisa Peer",
-    "url": "https://mega.nz/folder/21pRRQKY#WQTXgcOpJoXOc0Z3k32KEg/folder/PswQ3YrR",
-    "step": "downloading"
+    "step": "transcribing",
+    "totalFiles": 24,
+    "files": [
+      "07-013_Tell_Yourself_a_Better_Lie.mp3",
+      "05-Marisa Concludes the Program.mp4",
+      "07-006_Tell_Yourself_a_Better_Lie.mp3",
+      "07-014_Tell_Yourself_a_Better_Lie.mp3",
+      "07-BONUS Download the Tell Yourself a Better Lie eBook.mp4",
+      "01-How to Teach Your Mind That Everything Is Available to You Core Video.mp4",
+      "07-007_Tell_Yourself_a_Better_Lie.mp3",
+      "07-010_Tell_Yourself_a_Better_Lie.mp3",
+      "07-012_Tell_Yourself_a_Better_Lie_1_.mp3",
+      "07-004_Tell_Yourself_a_Better_Lie.mp3",
+      "07-002_Tell_Yourself_a_Better_Lie.mp3",
+      "07-008_Tell_Yourself_a_Better_Lie.mp3",
+      "02-Coaching Call Additional Learning.mp4",
+      "03-Week_8_Transformation_Audio_-_Everything_Is_Available_to_Me.mp3",
+      "07-017_Tell_Yourself_a_Better_Lie.mp3",
+      "07-001_Tell_Yourself_a_Better_Lie.mp3",
+      "03-Week_8_Hypnosis_Audio.mp3",
+      "07-005_Tell_Yourself_a_Better_Lie.mp3",
+      "07-011_Tell_Yourself_a_Better_Lie.mp3",
+      "07-003_Tell_Yourself_a_Better_Lie.mp3",
+      "07-016_Tell_Yourself_a_Better_Lie.mp3",
+      "04-Chapter_12_-_I_Am_Enough_-_Marisa_Peer.mp3",
+      "07-015_Tell_Yourself_a_Better_Lie.mp3",
+      "07-009_Tell_Yourself_a_Better_Lie.mp3"
+    ]
   }
 }
