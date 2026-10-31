@@ -1,9 +1,4 @@
 {
-  "workerId": "worker_1793400485",
-  "status": "stopped",
-  "activeTaskId": null,
-  "heartbeat": "2026-10-30T23:46:39.515044+00:00",
-  "details": {
-    "reason": "user_stop"
-  }
+  "status": "warming_up",
+  "startedAt": "2026-10-31T00:14:48.433Z"
 }
