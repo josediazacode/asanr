@@ -1,14 +1,9 @@
 {
   "workerId": "worker_1793405737",
-  "status": "ready",
+  "status": "stopped",
   "activeTaskId": null,
-  "heartbeat": "2026-10-31T01:21:25.474631+00:00",
+  "heartbeat": "2026-10-31T01:22:04.131091+00:00",
   "details": {
-    "models": [
-      "faster-whisper/tiny.en",
-      "nomic-ai/nomic-embed-text-v1.5"
-    ],
-    "uptimeMinutes": 65,
-    "modelsLoaded": true
+    "reason": "user_stop"
   }
 }
