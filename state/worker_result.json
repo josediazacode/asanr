@@ -1,12 +1,12 @@
 {
-  "taskId": "task_1793400516013",
+  "taskId": "task_1793405763153",
   "status": "completed",
   "ok": true,
   "persona": "Marisa Peer",
-  "totalFiles": 15,
-  "totalWords": 40690,
-  "totalChunks": 122,
-  "durationSec": 3289.6,
-  "completedAt": "2026-10-30T23:43:32.728969+00:00",
-  "branch": "deliverables/task_1793400516013"
+  "totalFiles": 24,
+  "totalWords": 130007,
+  "totalChunks": 383,
+  "durationSec": 3906.0,
+  "completedAt": "2026-10-31T01:21:12.585503+00:00",
+  "branch": "deliverables/task_1793405763153"
 }
