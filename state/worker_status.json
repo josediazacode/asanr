@@ -2,13 +2,13 @@
   "workerId": "worker_1793405737",
   "status": "busy",
   "activeTaskId": "task_1793405763153",
-  "heartbeat": "2026-10-31T01:03:54.559583+00:00",
+  "heartbeat": "2026-10-31T01:04:20.262245+00:00",
   "details": {
     "step": "transcribing",
-    "progress": "5/24",
-    "currentFile": "04-Chapter_12_-_I_Am_Enough_-_Marisa_Peer",
+    "progress": "6/24",
+    "currentFile": "05-Marisa Concludes the Program",
     "totalFiles": 24,
-    "chunksBuilt": 86,
-    "wordsTranscribed": 33303
+    "chunksBuilt": 98,
+    "wordsTranscribed": 35212
   }
 }
