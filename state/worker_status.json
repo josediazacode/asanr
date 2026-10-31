@@ -2,13 +2,13 @@
   "workerId": "worker_1793405737",
   "status": "busy",
   "activeTaskId": "task_1793405763153",
-  "heartbeat": "2026-10-31T00:58:59.350810+00:00",
+  "heartbeat": "2026-10-31T01:01:33.022701+00:00",
   "details": {
     "step": "transcribing",
-    "progress": "1/24",
-    "currentFile": "01-How to Teach Your Mind That Everything Is Available to You Core Video",
+    "progress": "2/24",
+    "currentFile": "02-Coaching Call Additional Learning",
     "totalFiles": 24,
-    "chunksBuilt": 0,
-    "wordsTranscribed": 6862
+    "chunksBuilt": 20,
+    "wordsTranscribed": 22580
   }
 }
