@@ -2,13 +2,13 @@
   "workerId": "worker_1793405737",
   "status": "busy",
   "activeTaskId": "task_1793405763153",
-  "heartbeat": "2026-10-31T01:19:08.477673+00:00",
+  "heartbeat": "2026-10-31T01:20:48.189720+00:00",
   "details": {
     "step": "transcribing",
-    "progress": "23/24",
-    "currentFile": "07-017_Tell_Yourself_a_Better_Lie",
+    "progress": "24/24",
+    "currentFile": "07-BONUS Download the Tell Yourself a Better Lie eBook",
     "totalFiles": 24,
-    "chunksBuilt": 348,
-    "wordsTranscribed": 118259
+    "chunksBuilt": 349,
+    "wordsTranscribed": 130007
   }
 }
