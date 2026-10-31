@@ -2,13 +2,13 @@
   "workerId": "worker_1793405737",
   "status": "busy",
   "activeTaskId": "task_1793405763153",
-  "heartbeat": "2026-10-31T01:03:16.225199+00:00",
+  "heartbeat": "2026-10-31T01:03:54.559583+00:00",
   "details": {
     "step": "transcribing",
-    "progress": "4/24",
-    "currentFile": "03-Week_8_Transformation_Audio_-_Everything_Is_Available_to_Me",
+    "progress": "5/24",
+    "currentFile": "04-Chapter_12_-_I_Am_Enough_-_Marisa_Peer",
     "totalFiles": 24,
-    "chunksBuilt": 80,
-    "wordsTranscribed": 29271
+    "chunksBuilt": 86,
+    "wordsTranscribed": 33303
   }
 }
