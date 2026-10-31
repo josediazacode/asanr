@@ -1,14 +1,12 @@
 {
   "workerId": "worker_1793405737",
-  "status": "busy",
+  "status": "awaiting_choice",
   "activeTaskId": "task_1793405763153",
-  "heartbeat": "2026-10-31T01:20:48.189720+00:00",
+  "heartbeat": "2026-10-31T01:21:19.178571+00:00",
   "details": {
-    "step": "transcribing",
-    "progress": "24/24",
-    "currentFile": "07-BONUS Download the Tell Yourself a Better Lie eBook",
     "totalFiles": 24,
-    "chunksBuilt": 349,
-    "wordsTranscribed": 130007
+    "totalChunks": 383,
+    "durationSec": 3906.0,
+    "branch": "deliverables/task_1793405763153"
   }
 }
